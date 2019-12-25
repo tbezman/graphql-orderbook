@@ -1,15 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import '../src/styles/index.css'
-import App from '../src/components/App'
+
 import {ApolloProvider} from '@apollo/react-hooks'
 import ApolloClient from "apollo-client";
-// Setup the network "links"
 import { WebSocketLink } from 'apollo-link-ws';
 import { HttpLink } from 'apollo-link-http';
 import { split } from 'apollo-link';
 import { getMainDefinition } from 'apollo-utilities';
 import { InMemoryCache } from 'apollo-cache-inmemory';
+
+import App from '../src/components/App'
 
 const httpLink = new HttpLink({
     uri: "http://localhost:4000", // use https for secure endpoint
@@ -47,4 +47,4 @@ ReactDOM.render(
         <App/>
     </ApolloProvider>,
     document.getElementById('root'),
-)
+);
